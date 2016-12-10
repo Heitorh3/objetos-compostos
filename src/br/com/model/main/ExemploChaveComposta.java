@@ -14,9 +14,9 @@ public class ExemploChaveComposta {
 		EntityManager em = emf.createEntityManager();
 		
 		Veiculo veiculo = new Veiculo();
-		veiculo.setCodigo(new VeiculoId("ABC-1234", "Rio Claro"));
+		veiculo.setCodigo(new VeiculoId("ABC-2358", "Virginópolis"));
 		veiculo.setFabricante("GM");
-		veiculo.setModelo("Chevette");
+		veiculo.setModelo("Celta");
 		
 		em.getTransaction().begin();
 		em.persist(veiculo);
