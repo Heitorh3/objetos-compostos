@@ -18,15 +18,17 @@ public class ExemploChaveComposta {
 		veiculo.setFabricante("GM");
 		veiculo.setModelo("Celta");
 		
+		/*
 		em.getTransaction().begin();
 		em.persist(veiculo);
 		em.getTransaction().commit();
+		*/
 		
 		VeiculoId codigo =  new VeiculoId("ABC-1234", "Rio Claro");
 		Veiculo v = em.find(Veiculo.class, codigo);
 		
 		System.out.println("Veiculo " + v.getCodigo().getPlaca() + " - " 
-				+ v.getCodigo().getCidade() + " - Fabricante: " + v.getFabricante());
+				+ v.getCodigo().getCidade() + " - Fabricante: " + v.getFabricante() + " - " + v.getDescricao());
 		
 		em.close();
 	}

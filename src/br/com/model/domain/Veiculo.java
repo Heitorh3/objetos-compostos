@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "veiculo")
@@ -55,6 +56,12 @@ public class Veiculo implements Serializable{
 		int result = 1;
 		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
 		return result;
+	}
+
+	@Transient
+	public String getDescricao() {
+		return "Veiculo [codigo=" + codigo.getCidade() + " - " + codigo.getPlaca() + ", fabricante=" + fabricante
+				+ ", modelo=" + modelo + ", proprietario=" + proprietario + "]";
 	}
 
 	@Override
